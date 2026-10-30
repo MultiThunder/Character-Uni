@@ -3,13 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<<<<<<< HEAD
     <title>The Character Universe | Every character has a story.</title>
     <meta name="description" content="Find, understand, inspect, compare, create, copy and reuse Unicode characters, symbols and text-based representations.">
+=======
+    <title>The Character Universe â€” Copy text symbols</title>
+    <meta name="description" content="Hearts, stars, arrows, math, currency and more. Free, instant, no signup. Click to copy.">
+>>>>>>> 97aea787a2ba982e96cf0c4445ce721de39bc266
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
+<<<<<<< HEAD
             --background: #F7F8FC;
             --surface: #FFFFFF;
             --surface-secondary: #F0EEFF;
@@ -103,11 +109,72 @@
             align-items: center;
         }
         @media (min-width: 968px) { .nav__menu { display: flex; } }
+=======
+            --bg: #ffffff;
+            --bg-subtle: #f9f9f9;
+            --text: #1a1a1a;
+            --text-secondary: #666666;
+            --border: #e5e5e5;
+            --accent: #0066ff;
+            --surface: #ffffff;
+        }
+        [data-theme="dark"] {
+            --bg: #0a0a0a;
+            --bg-subtle: #141414;
+            --text: #e5e5e5;
+            --text-secondary: #a3a3a3;
+            --border: #262626;
+            --accent: #3b82f6;
+            --surface: #111111;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+        .header {
+            border-bottom: 1px solid var(--border);
+            background: var(--bg);
+            position: sticky;
+            top: 0;
+            z-index: 50;
+        }
+        .nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 64px;
+            gap: 2rem;
+        }
+        .nav__brand {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: var(--text);
+            text-decoration: none;
+            white-space: nowrap;
+        }
+        .nav__links {
+            display: none;
+            list-style: none;
+            gap: 1.5rem;
+            flex: 1;
+        }
+        @media (min-width: 768px) {
+            .nav__links { display: flex; }
+        }
+>>>>>>> 97aea787a2ba982e96cf0c4445ce721de39bc266
         .nav__link {
             color: var(--text-secondary);
             text-decoration: none;
             font-size: 0.875rem;
             font-weight: 500;
+<<<<<<< HEAD
             transition: color 0.2s;
         }
         .nav__link:hover, .nav__link:focus { color: var(--text-primary); outline: 2px solid var(--focus-ring); outline-offset: 2px; }
@@ -135,10 +202,53 @@
         }
         @media (min-width: 640px) { .hero__title { font-size: 3rem; } }
         @media (min-width: 1024px) { .hero__title { font-size: 3.75rem; } }
+=======
+        }
+        .nav__link:hover { color: var(--text); }
+        .nav__actions {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        .nav__button {
+            background: transparent;
+            border: none;
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+            cursor: pointer;
+            padding: 0.375rem 0.5rem;
+        }
+        .nav__button:hover { color: var(--text); }
+        .theme-toggle {
+            background: transparent;
+            border: none;
+            color: var(--text-secondary);
+            cursor: pointer;
+            padding: 0.375rem;
+            font-size: 1rem;
+        }
+        .hero {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 1.5rem 3rem;
+            text-align: center;
+        }
+        .hero__title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+        }
+        @media (min-width: 768px) {
+            .hero__title { font-size: 3.5rem; }
+        }
+>>>>>>> 97aea787a2ba982e96cf0c4445ce721de39bc266
         .hero__subtitle {
             font-size: 1.125rem;
             color: var(--text-secondary);
             margin-bottom: 2rem;
+<<<<<<< HEAD
             line-height: 1.7;
         }
         @media (min-width: 640px) { .hero__subtitle { font-size: 1.25rem; } }
@@ -220,6 +330,154 @@
             border-top: 1px solid var(--border);
             margin-top: 4rem;
             padding: 3rem 0 2rem;
+=======
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .search {
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            position: relative;
+        }
+        .search__input {
+            width: 100%;
+            padding: 0.875rem 1rem 0.875rem 2.75rem;
+            font-size: 0.9375rem;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            color: var(--text);
+            font-family: inherit;
+        }
+        .search__input:focus {
+            outline: 2px solid var(--accent);
+            outline-offset: 2px;
+            border-color: var(--accent);
+        }
+        .search__icon {
+            position: absolute;
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-secondary);
+        }
+        .search__hint {
+            font-size: 0.8125rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+        .categories {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            justify-content: center;
+            max-width: 1000px;
+            margin: 0 auto 3rem;
+            padding: 0 1.5rem;
+        }
+        .category-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.375rem;
+            padding: 0.5rem 0.875rem;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            color: var(--text);
+            text-decoration: none;
+            font-size: 0.875rem;
+            transition: all 0.15s;
+        }
+        .category-pill:hover {
+            border-color: var(--accent);
+            background: var(--bg-subtle);
+        }
+        .section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 1.5rem;
+        }
+        .section__header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 1.5rem;
+        }
+        .section__title {
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+        .section__link {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+        .symbols-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+            gap: 0.5rem;
+        }
+        .symbol-btn {
+            aspect-ratio: 1;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: all 0.15s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .symbol-btn:hover {
+            border-color: var(--accent);
+            background: var(--bg-subtle);
+            transform: scale(1.05);
+        }
+        .tools-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+        }
+        @media (min-width: 640px) {
+            .tools-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (min-width: 1024px) {
+            .tools-grid { grid-template-columns: repeat(3, 1fr); }
+        }
+        .tool-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.25rem;
+            text-decoration: none;
+            color: var(--text);
+            transition: all 0.15s;
+        }
+        .tool-card:hover {
+            border-color: var(--accent);
+        }
+        .tool-card__title {
+            font-weight: 600;
+            margin-bottom: 0.375rem;
+            font-size: 0.9375rem;
+        }
+        .tool-card__desc {
+            font-size: 0.8125rem;
+            color: var(--text-secondary);
+        }
+        .footer {
+            border-top: 1px solid var(--border);
+            background: var(--bg-subtle);
+            margin-top: 4rem;
+        }
+        .footer__container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 1.5rem 2rem;
+>>>>>>> 97aea787a2ba982e96cf0c4445ce721de39bc266
         }
         .footer__grid {
             display: grid;
@@ -227,6 +485,7 @@
             gap: 2rem;
             margin-bottom: 2rem;
         }
+<<<<<<< HEAD
         @media (min-width: 768px) { .footer__grid { grid-template-columns: 2fr 1fr 1fr; gap: 3rem; } }
         .footer__title { font-size: 1.125rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.75rem; }
         .footer__heading { font-size: 0.875rem; font-weight: 600; color: var(--text-primary); margin-bottom: 1rem; }
@@ -240,10 +499,48 @@
         @media (prefers-reduced-motion: reduce) {
             *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
             html { scroll-behavior: auto; }
+=======
+        @media (min-width: 768px) {
+            .footer__grid { grid-template-columns: 2fr 1fr 1fr 1fr; }
+        }
+        .footer__brand {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        .footer__desc {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+        }
+        .footer__heading {
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+        .footer__list {
+            list-style: none;
+        }
+        .footer__item {
+            margin-bottom: 0.5rem;
+        }
+        .footer__link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.875rem;
+        }
+        .footer__link:hover { color: var(--text); }
+        .footer__bottom {
+            padding-top: 2rem;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            font-size: 0.8125rem;
+            color: var(--text-secondary);
+>>>>>>> 97aea787a2ba982e96cf0c4445ce721de39bc266
         }
     </style>
 </head>
 <body>
+<<<<<<< HEAD
     <a href="#main" class="skip-link">Skip to main content</a>
     <header class="header" role="banner">
         <nav class="nav container" role="navigation" aria-label="Main navigation">
@@ -351,14 +648,175 @@
                         <li class="footer__item"><a href="/privacy" class="footer__link">Privacy</a></li>
                         <li class="footer__item"><a href="/terms" class="footer__link">Terms</a></li>
                         <li class="footer__item"><a href="/disclaimer" class="footer__link">Disclaimer</a></li>
+=======
+    <header class="header">
+        <nav class="nav">
+            <a href="/" class="nav__brand">âœ¦ The Character Universe</a>
+            <ul class="nav__links">
+                <li><a href="#categories" class="nav__link">Categories</a></li>
+                <li><a href="#tools" class="nav__link">Tools</a></li>
+                <li><a href="#use-cases" class="nav__link">Use cases</a></li>
+                <li><a href="#favorites" class="nav__link">â˜… Favorites</a></li>
+                <li><a href="#about" class="nav__link">About</a></li>
+            </ul>
+            <div class="nav__actions">
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">â˜€â˜¾</button>
+                <button class="nav__button">â˜°</button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div style="font-size: 0.875rem; color: var(--text-secondary); margin-bottom: 1rem;">1,414 symbols across 37 categories</div>
+            <h1 class="hero__title">Text symbols,<br>one click to copy.</h1>
+            <p class="hero__subtitle">Hearts, stars, arrows, math, currency, zodiac and more. Free, instant, no signup.</p>
+            <div class="search">
+                <span class="search__icon">âŒ•</span>
+                <input type="text" class="search__input" placeholder="Search all symbols by description, name, character, or Unicode codepoint">
+            </div>
+            <div class="search__hint">Try arrow with hook, â˜…, or u+2605. Press / anywhere to focus.</div>
+        </section>
+
+        <section id="categories" class="categories">
+            <a href="#heart" class="category-pill"><span>â™¥</span> Heart</a>
+            <a href="#star" class="category-pill"><span>â˜…</span> Star</a>
+            <a href="#arrow" class="category-pill"><span>â†’</span> Arrow</a>
+            <a href="#check" class="category-pill"><span>âœ“</span> Check and Cross</a>
+            <a href="#math" class="category-pill"><span>âˆ‘</span> Math</a>
+            <a href="#currency" class="category-pill"><span>â‚¬</span> Currency</a>
+            <a href="#number" class="category-pill"><span>â‘ </span> Number</a>
+            <a href="#punctuation" class="category-pill"><span>â¡</span> Punctuation</a>
+            <a href="#geometric" class="category-pill"><span>â—†</span> Geometric Shape</a>
+            <a href="#circle" class="category-pill"><span>â—</span> Circle</a>
+            <a href="#square" class="category-pill"><span>â– </span> Square</a>
+            <a href="#triangle" class="category-pill"><span>â–²</span> Triangle</a>
+            <a href="#zodiac" class="category-pill"><span>â™ˆ</span> Zodiac</a>
+            <a href="#chess" class="category-pill"><span>â™›</span> Chess</a>
+            <a href="#music" class="category-pill"><span>â™«</span> Music</a>
+            <a href="#weather" class="category-pill"><span>â˜€</span> Weather</a>
+            <a href="#technical" class="category-pill"><span>âŒ¬</span> Technical</a>
+            <a href="#keyboard" class="category-pill"><span>âŒ˜</span> Keyboard</a>
+            <a href="#bullet" class="category-pill"><span>â€¢</span> Bullet</a>
+            <a href="#line" class="category-pill"><span>â€•</span> Line</a>
+        </section>
+
+        <section class="section">
+            <div class="section__header">
+                <h2 class="section__title">Featured symbols</h2>
+                <a href="#all" class="section__link">Browse all â†’</a>
+            </div>
+            <div class="symbols-grid">
+                <button class="symbol-btn" title="Heart">â™¥</button>
+                <button class="symbol-btn" title="Heart Outline">â™¡</button>
+                <button class="symbol-btn" title="Star">â˜…</button>
+                <button class="symbol-btn" title="Star Outline">â˜†</button>
+                <button class="symbol-btn" title="Arrow Right">â†’</button>
+                <button class="symbol-btn" title="Arrow Left">â†</button>
+                <button class="symbol-btn" title="Arrow Up">â†‘</button>
+                <button class="symbol-btn" title="Arrow Down">â†“</button>
+                <button class="symbol-btn" title="Check">âœ“</button>
+                <button class="symbol-btn" title="Check Bold">âœ”</button>
+                <button class="symbol-btn" title="Cross">âœ•</button>
+                <button class="symbol-btn" title="Multiplication X">âœ–</button>
+                <button class="symbol-btn" title="Sparkles">âœ¨</button>
+                <button class="symbol-btn" title="Black Star">âœ¦</button>
+                <button class="symbol-btn" title="Music Note">â™«</button>
+                <button class="symbol-btn" title="Crown">â™›</button>
+                <button class="symbol-btn" title="Infinity">âˆž</button>
+                <button class="symbol-btn" title="Trademark">â„¢</button>
+                <button class="symbol-btn" title="Copyright">Â©</button>
+                <button class="symbol-btn" title="Registered">Â®</button>
+                <button class="symbol-btn" title="Degree">Â°</button>
+                <button class="symbol-btn" title="Bullet">â€¢</button>
+                <button class="symbol-btn" title="Middle Dot">Â·</button>
+                <button class="symbol-btn" title="Diamond">â™¦</button>
+            </div>
+        </section>
+
+        <section id="tools" class="section">
+            <div class="section__header">
+                <h2 class="section__title">Tools & generators</h2>
+            </div>
+            <div class="tools-grid">
+                <a href="#font-generator" class="tool-card">
+                    <div class="tool-card__title">Text Font Generator</div>
+                    <div class="tool-card__desc">Type once, copy fancy fonts â€” cursive, bold, gothic, bubble, aesthetic & more.</div>
+                </a>
+                <a href="#kaomoji" class="tool-card">
+                    <div class="tool-card__title">Kaomoji & Text Faces</div>
+                    <div class="tool-card__desc">Japanese emoticons by mood â€” happy, angry, love, shrug & table flip.</div>
+                </a>
+                <a href="#lenny" class="tool-card">
+                    <div class="tool-card__title">Lenny Face</div>
+                    <div class="tool-card__desc">Classic and variations, ready to copy.</div>
+                </a>
+                <a href="#decorative" class="tool-card">
+                    <div class="tool-card__title">Decorative Symbols</div>
+                    <div class="tool-card__desc">Borders, dividers, loading bars & aesthetic combos for bios and posts.</div>
+                </a>
+                <a href="#draw" class="tool-card">
+                    <div class="tool-card__title">Draw to Find</div>
+                    <div class="tool-card__desc">Sketch a symbol with your mouse and we find the closest matches.</div>
+                </a>
+                <a href="#export" class="tool-card">
+                    <div class="tool-card__title">SVG Â· PNG Export</div>
+                    <div class="tool-card__desc">Download any symbol as a transparent SVG or PNG â€” and pick its color.</div>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer__container">
+            <div class="footer__grid">
+                <div>
+                    <div class="footer__brand">âœ¦ The Character Universe</div>
+                    <p class="footer__desc">The symbol library for finding and copying characters.</p>
+                </div>
+                <div>
+                    <div class="footer__heading">Categories</div>
+                    <ul class="footer__list">
+                        <li class="footer__item"><a href="#heart" class="footer__link">â™¥ Heart</a></li>
+                        <li class="footer__item"><a href="#star" class="footer__link">â˜… Star</a></li>
+                        <li class="footer__item"><a href="#arrow" class="footer__link">â†’ Arrow</a></li>
+                        <li class="footer__item"><a href="#math" class="footer__link">âˆ‘ Math</a></li>
+                        <li class="footer__item"><a href="#all" class="footer__link">All categories â†’</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="footer__heading">Site</div>
+                    <ul class="footer__list">
+                        <li class="footer__item"><a href="/" class="footer__link">Home</a></li>
+                        <li class="footer__item"><a href="#use-cases" class="footer__link">Use Cases</a></li>
+                        <li class="footer__item"><a href="#font-generator" class="footer__link">Font Generator</a></li>
+                        <li class="footer__item"><a href="#draw" class="footer__link">Draw to Find</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="footer__heading">Info</div>
+                    <ul class="footer__list">
+                        <li class="footer__item"><a href="#about" class="footer__link">About</a></li>
+                        <li class="footer__item"><a href="#contact" class="footer__link">Contact</a></li>
+                        <li class="footer__item"><a href="#privacy" class="footer__link">Privacy</a></li>
+                        <li class="footer__item"><a href="#terms" class="footer__link">Terms</a></li>
+>>>>>>> 97aea787a2ba982e96cf0c4445ce721de39bc266
                     </ul>
                 </div>
             </div>
             <div class="footer__bottom">
+<<<<<<< HEAD
                 <p class="footer__copyright">© 2024 The Character Universe. All rights reserved.</p>
             </div>
         </div>
     </footer>
+=======
+                <p>Â© 2024 The Character Universe. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+>>>>>>> 97aea787a2ba982e96cf0c4445ce721de39bc266
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             const themeToggle = document.getElementById("themeToggle");
@@ -370,7 +828,10 @@
             function setTheme(theme) {
                 document.documentElement.setAttribute("data-theme", theme);
                 localStorage.setItem("theme", theme);
+<<<<<<< HEAD
                 if (themeToggle) themeToggle.textContent = theme === "dark" ? "☀️" : "🌙";
+=======
+>>>>>>> 97aea787a2ba982e96cf0c4445ce721de39bc266
             }
             setTheme(getTheme());
             if (themeToggle) {
@@ -379,7 +840,251 @@
                     setTheme(current === "dark" ? "light" : "dark");
                 });
             }
+<<<<<<< HEAD
         });
     </script>
 </body>
 </html>
+=======
+            document.querySelectorAll(".symbol-btn").forEach(btn => {
+                btn.addEventListener("click", async function() {
+                    try {
+                        await navigator.clipboard.writeText(this.textContent);
+                        const original = this.textContent;
+                        this.textContent = "âœ“";
+                        setTimeout(() => { this.textContent = original; }, 1000);
+                    } catch (e) {}
+                });
+            });
+            document.addEventListener("keydown", function(e) {
+                if (e.key === "/" && !e.ctrlKey && !e.metaKey) {
+                    const searchInput = document.querySelector(".search__input");
+                    if (searchInput && document.activeElement !== searchInput) {
+                        e.preventDefault();
+                        searchInput.focus();
+                    }
+                }
+            });
+        });
+    </script>
+
+            <script>
+        const allSymbols = [
+            {char: "♥", name: "Heart", category: "heart", desc: "heart"},
+            {char: "♡", name: "White Heart Suit", category: "heart", desc: "heart outline"},
+            {char: "❤", name: "Heavy Black Heart", category: "heart", desc: "red heart"},
+            {char: "❥", name: "Rotated Heavy Black Heart Bullet", category: "heart", desc: "rotated heart"},
+            {char: "★", name: "Black Star", category: "star", desc: "star"},
+            {char: "☆", name: "White Star", category: "star", desc: "star outline"},
+            {char: "✦", name: "Black Four Pointed Star", category: "star", desc: "sparkle"},
+            {char: "✨", name: "Sparkles", category: "star", desc: "sparkles"},
+            {char: "→", name: "Rightwards Arrow", category: "arrow", desc: "arrow right"},
+            {char: "←", name: "Leftwards Arrow", category: "arrow", desc: "arrow left"},
+            {char: "↑", name: "Upwards Arrow", category: "arrow", desc: "arrow up"},
+            {char: "↓", name: "Downwards Arrow", category: "arrow", desc: "arrow down"},
+            {char: "↔", name: "Left Right Arrow", category: "arrow", desc: "arrow both"},
+            {char: "↕", name: "Up Down Arrow", category: "arrow", desc: "arrow vertical"},
+            {char: "✓", name: "Check Mark", category: "check", desc: "check tick"},
+            {char: "✔", name: "Heavy Check Mark", category: "check", desc: "check bold"},
+            {char: "✕", name: "Multiplication X", category: "check", desc: "cross x"},
+            {char: "✖", name: "Heavy Multiplication X", category: "check", desc: "cross bold"},
+            {char: "∑", name: "N-Ary Summation", category: "math", desc: "sum"},
+            {char: "∏", name: "N-Ary Product", category: "math", desc: "product"},
+            {char: "∞", name: "Infinity", category: "math", desc: "infinity"},
+            {char: "√", name: "Square Root", category: "math", desc: "sqrt"},
+            {char: "±", name: "Plus-Minus Sign", category: "math", desc: "plus minus"},
+            {char: "≠", name: "Not Equal To", category: "math", desc: "not equal"},
+            {char: "≤", name: "Less-Than Or Equal To", category: "math", desc: "less equal"},
+            {char: "≥", name: "Greater-Than Or Equal To", category: "math", desc: "greater equal"},
+            {char: "€", name: "Euro Sign", category: "currency", desc: "euro"},
+            {char: "£", name: "Pound Sterling", category: "currency", desc: "pound"},
+            {char: "¥", name: "Yen Sign", category: "currency", desc: "yen"},
+            {char: "$", name: "Dollar Sign", category: "currency", desc: "dollar"},
+            {char: "₹", name: "Indian Rupee Sign", category: "currency", desc: "rupee"},
+            {char: "①", name: "Circled Digit One", category: "number", desc: "one"},
+            {char: "②", name: "Circled Digit Two", category: "number", desc: "two"},
+            {char: "③", name: "Circled Digit Three", category: "number", desc: "three"},
+            {char: "❡", name: "Reversed Pilcrow Sign", category: "punctuation", desc: "pilcrow"},
+            {char: "…", name: "Horizontal Ellipsis", category: "punctuation", desc: "ellipsis"},
+            {char: "—", name: "Em Dash", category: "punctuation", desc: "em dash"},
+            {char: "–", name: "En Dash", category: "punctuation", desc: "en dash"},
+            {char: "◆", name: "Black Diamond Suit", category: "geometric", desc: "diamond"},
+            {char: "◇", name: "White Diamond Suit", category: "geometric", desc: "diamond outline"},
+            {char: "●", name: "Black Circle", category: "circle", desc: "circle"},
+            {char: "○", name: "White Circle", category: "circle", desc: "circle outline"},
+            {char: "■", name: "Black Square", category: "square", desc: "square"},
+            {char: "□", name: "White Square", category: "square", desc: "square outline"},
+            {char: "▲", name: "Black Up-Pointing Triangle", category: "triangle", desc: "triangle up"},
+            {char: "▼", name: "Black Down-Pointing Triangle", category: "triangle", desc: "triangle down"},
+            {char: "♈", name: "Aries", category: "zodiac", desc: "aries"},
+            {char: "♉", name: "Taurus", category: "zodiac", desc: "taurus"},
+            {char: "♛", name: "Black Chess Queen", category: "chess", desc: "queen"},
+            {char: "♚", name: "Black Chess King", category: "chess", desc: "king"},
+            {char: "♫", name: "Beamed Eighth Notes", category: "music", desc: "music note"},
+            {char: "♪", name: "Eighth Note", category: "music", desc: "eighth note"},
+            {char: "☀", name: "Black Sun With Rays", category: "weather", desc: "sun"},
+            {char: "☁", name: "Cloud", category: "weather", desc: "cloud"},
+            {char: "⌘", name: "Place of Interest Sign", category: "keyboard", desc: "command"},
+            {char: "⌥", name: "Option Key", category: "keyboard", desc: "option"},
+            {char: "•", name: "Bullet", category: "bullet", desc: "bullet"},
+            {char: "◦", name: "White Bullet", category: "bullet", desc: "bullet outline"},
+            {char: "―", name: "Horizontal Bar", category: "line", desc: "line"},
+            {char: "—", name: "Em Dash", category: "line", desc: "dash"},
+            {char: "™", name: "Trade Mark Sign", category: "punctuation", desc: "trademark"},
+            {char: "©", name: "Copyright Sign", category: "punctuation", desc: "copyright"},
+            {char: "®", name: "Registered Sign", category: "punctuation", desc: "registered"},
+            {char: "°", name: "Degree Sign", category: "punctuation", desc: "degree"},
+            {char: "·", name: "Middle Dot", category: "punctuation", desc: "dot"},
+            {char: "♦", name: "Black Diamond Suit", category: "geometric", desc: "diamond suit"}
+        ];
+        
+        document.addEventListener("DOMContentLoaded", function() {
+            const themeToggle = document.getElementById("themeToggle");
+            function getTheme() {
+                const saved = localStorage.getItem("theme");
+                if (saved) return saved;
+                return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+            }
+            function setTheme(theme) {
+                document.documentElement.setAttribute("data-theme", theme);
+                localStorage.setItem("theme", theme);
+            }
+            setTheme(getTheme());
+            if (themeToggle) {
+                themeToggle.addEventListener("click", function() {
+                    const current = document.documentElement.getAttribute("data-theme") || getTheme();
+                    setTheme(current === "dark" ? "light" : "dark");
+                });
+            }
+            
+            document.querySelectorAll(".symbol-btn").forEach(btn => {
+                btn.addEventListener("click", async function() {
+                    try {
+                        await navigator.clipboard.writeText(this.textContent);
+                        const original = this.textContent;
+                        this.textContent = "✓";
+                        setTimeout(() => { this.textContent = original; }, 800);
+                    } catch (e) {}
+                });
+            });
+            
+            const searchInput = document.querySelector(".search__input");
+            if (searchInput) {
+                searchInput.addEventListener("input", function() {
+                    const query = this.value.toLowerCase().trim();
+                    const resultsSection = document.getElementById("search-results") || createSearchResults();
+                    if (query === "") {
+                        resultsSection.style.display = "none";
+                        return;
+                    }
+                    resultsSection.style.display = "block";
+                    const results = allSymbols.filter(s => 
+                        s.char.includes(query) || s.name.toLowerCase().includes(query) || 
+                        s.desc.includes(query) || s.category.includes(query)
+                    ).slice(0, 60);
+                    displaySearchResults(results, query);
+                });
+            }
+            
+            function createSearchResults() {
+                const section = document.createElement("section");
+                section.id = "search-results";
+                section.className = "section";
+                section.innerHTML = `
+                    <div class="section__header">
+                        <h2 class="section__title">Search Results</h2>
+                        <span id="result-count" class="section__link"></span>
+                    </div>
+                    <div id="search-grid" class="symbols-grid"></div>
+                `;
+                document.querySelector("main").insertBefore(section, document.querySelectorAll(".section")[1]);
+                return section;
+            }
+            
+            function displaySearchResults(results, query) {
+                const grid = document.getElementById("search-grid");
+                const count = document.getElementById("result-count");
+                if (!grid) return;
+                count.textContent = results.length + " results";
+                grid.innerHTML = "";
+                if (results.length === 0) {
+                    grid.innerHTML = '<p style="color: var(--text-secondary); grid-column: 1 / -1;">No symbols found. Try a different search term.</p>';
+                    return;
+                }
+                results.forEach(s => {
+                    const btn = document.createElement("button");
+                    btn.className = "symbol-btn";
+                    btn.title = s.name;
+                    btn.textContent = s.char;
+                    btn.addEventListener("click", async function() {
+                        try {
+                            await navigator.clipboard.writeText(s.char);
+                            const original = s.char;
+                            this.textContent = "✓";
+                            setTimeout(() => { this.textContent = original; }, 800);
+                        } catch (e) {}
+                    });
+                    grid.appendChild(btn);
+                });
+            }
+            
+            document.querySelectorAll(".category-pill").forEach(pill => {
+                pill.addEventListener("click", function(e) {
+                    e.preventDefault();
+                    const cat = this.textContent.toLowerCase();
+                    let category = "";
+                    if (cat.includes("heart")) category = "heart";
+                    else if (cat.includes("star")) category = "star";
+                    else if (cat.includes("arrow")) category = "arrow";
+                    else if (cat.includes("check")) category = "check";
+                    else if (cat.includes("math")) category = "math";
+                    else if (cat.includes("currency")) category = "currency";
+                    else if (cat.includes("number")) category = "number";
+                    else if (cat.includes("punctuation")) category = "punctuation";
+                    else if (cat.includes("geometric")) category = "geometric";
+                    else if (cat.includes("circle")) category = "circle";
+                    else if (cat.includes("square")) category = "square";
+                    else if (cat.includes("triangle")) category = "triangle";
+                    else if (cat.includes("zodiac")) category = "zodiac";
+                    else if (cat.includes("chess")) category = "chess";
+                    else if (cat.includes("music")) category = "music";
+                    else if (cat.includes("weather")) category = "weather";
+                    else if (cat.includes("technical")) category = "technical";
+                    else if (cat.includes("keyboard")) category = "keyboard";
+                    else if (cat.includes("bullet")) category = "bullet";
+                    else if (cat.includes("line")) category = "line";
+                    
+                    if (category) {
+                        const resultsSection = document.getElementById("search-results") || createSearchResults();
+                        resultsSection.style.display = "block";
+                        const results = allSymbols.filter(s => s.category === category);
+                        document.getElementById("result-count").textContent = results.length + " symbols in " + this.textContent.trim();
+                        document.querySelector("#search-results .section__title").textContent = this.textContent.trim() + " Symbols";
+                        displaySearchResults(results, category);
+                        resultsSection.scrollIntoView({ behavior: "smooth", block: "start" });
+                    }
+                });
+            });
+            
+            document.addEventListener("keydown", function(e) {
+                if (e.key === "/" && !e.ctrlKey && !e.metaKey) {
+                    const searchInput = document.querySelector(".search__input");
+                    if (searchInput && document.activeElement !== searchInput && document.activeElement.tagName !== "INPUT" && document.activeElement.tagName !== "TEXTAREA") {
+                        e.preventDefault();
+                        searchInput.focus();
+                        searchInput.scrollIntoView({ behavior: "smooth", block: "center" });
+                    }
+                }
+                if (e.key === "Escape") {
+                    const searchInput = document.querySelector(".search__input");
+                    if (searchInput) {
+                        searchInput.value = "";
+                        const resultsSection = document.getElementById("search-results");
+                        if (resultsSection) resultsSection.style.display = "none";
+                    }
+                }
+            });
+        });
+        </script>
+</body>\n</html>
+>>>>>>> 97aea787a2ba982e96cf0c4445ce721de39bc266
