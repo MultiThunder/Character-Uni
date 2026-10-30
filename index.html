@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Character Universe | Every character has a story.</title>
+    <meta name="description" content="Find, understand, inspect, compare, create, copy and reuse Unicode characters, symbols and text-based representations.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --background: #F7F8FC;
+            --surface: #FFFFFF;
+            --surface-secondary: #F0EEFF;
+            --surface-tertiary: #F2F4FA;
+            --text-primary: #202044;
+            --text-secondary: #666582;
+            --text-muted: #817F9B;
+            --border: #E3E6EF;
+            --border-strong: #C9CBE0;
+            --primary: #5B49D6;
+            --primary-hover: #4937C1;
+            --primary-soft: #EAE7FF;
+            --focus-ring: #6B5AE8;
+            --success: #16834A;
+            --warning: #946200;
+            --danger: #B42335;
+            --info: #315BC6;
+            color-scheme: light;
+        }
+        [data-theme="dark"] {
+            --background: #0B1020;
+            --surface: #111A2C;
+            --surface-secondary: #191A38;
+            --surface-tertiary: #172238;
+            --text-primary: #F1F0FF;
+            --text-secondary: #B9B8D5;
+            --text-muted: #9695B5;
+            --border: #293650;
+            --border-strong: #3B4967;
+            --primary: #A99AFF;
+            --primary-hover: #C0B6FF;
+            --primary-soft: #29244D;
+            --focus-ring: #B6A9FF;
+            --success: #63D39A;
+            --warning: #F1C66D;
+            --danger: #FF8B98;
+            --info: #91B4FF;
+            color-scheme: dark;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            background-color: var(--background);
+            color: var(--text-primary);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: var(--primary);
+            color: white;
+            padding: 0.5rem 1rem;
+            text-decoration: none;
+            z-index: 100;
+        }
+        .skip-link:focus { top: 0; outline: 2px solid var(--focus-ring); outline-offset: 2px; }
+        .container { max-width: 1280px; margin: 0 auto; padding: 0 1rem; }
+        @media (min-width: 640px) { .container { padding: 0 1.5rem; } }
+        @media (min-width: 1024px) { .container { padding: 0 2rem; } }
+        .header {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            background-color: rgba(247, 248, 252, 0.95);
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid var(--border);
+        }
+        [data-theme="dark"] .header { background-color: rgba(11, 16, 32, 0.95); }
+        .nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            min-height: 4rem;
+            flex-wrap: wrap;
+        }
+        .nav__brand { display: flex; align-items: center; }
+        .nav__logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            text-decoration: none;
+        }
+        .nav__logo:hover, .nav__logo:focus { color: var(--primary); outline: 2px solid var(--focus-ring); outline-offset: 2px; }
+        .nav__menu {
+            display: none;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+        @media (min-width: 968px) { .nav__menu { display: flex; } }
+        .nav__link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.875rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        .nav__link:hover, .nav__link:focus { color: var(--text-primary); outline: 2px solid var(--focus-ring); outline-offset: 2px; }
+        .nav__link--active { color: var(--text-primary); }
+        .theme-toggle {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            padding: 0.5rem;
+            cursor: pointer;
+            border-radius: 0.5rem;
+            font-size: 1rem;
+        }
+        .theme-toggle:hover, .theme-toggle:focus { background-color: var(--surface-secondary); outline: 2px solid var(--focus-ring); outline-offset: 2px; }
+        .hero { padding: 3rem 0 2rem; }
+        @media (min-width: 640px) { .hero { padding: 4rem 0 3rem; } }
+        @media (min-width: 1024px) { .hero { padding: 5rem 0 4rem; } }
+        .hero__content { max-width: 48rem; }
+        .hero__title {
+            font-size: 2.25rem;
+            font-weight: 700;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+            color: var(--text-primary);
+            margin-bottom: 1.5rem;
+        }
+        @media (min-width: 640px) { .hero__title { font-size: 3rem; } }
+        @media (min-width: 1024px) { .hero__title { font-size: 3.75rem; } }
+        .hero__subtitle {
+            font-size: 1.125rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            line-height: 1.7;
+        }
+        @media (min-width: 640px) { .hero__subtitle { font-size: 1.25rem; } }
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.75rem 1.5rem;
+            font-size: 0.875rem;
+            font-weight: 500;
+            text-decoration: none;
+            border-radius: 0.5rem;
+            border: 1px solid transparent;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .btn:focus { outline: 2px solid var(--focus-ring); outline-offset: 2px; }
+        .btn--primary { background-color: var(--primary); color: white; }
+        .btn--primary:hover { background-color: var(--primary-hover); }
+        .btn--secondary { background-color: var(--surface); color: var(--text-primary); border-color: var(--border); }
+        .btn--secondary:hover { background-color: var(--surface-secondary); }
+        .section { padding: 2rem 0; }
+        @media (min-width: 640px) { .section { padding: 3rem 0; } }
+        .section__header { margin-bottom: 2rem; }
+        .section__title {
+            font-size: 1.875rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+        @media (min-width: 640px) { .section__title { font-size: 2.25rem; } }
+        .section__subtitle { color: var(--text-secondary); font-size: 1rem; }
+        .tools-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+        @media (min-width: 768px) { .tools-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (min-width: 1024px) { .tools-grid { grid-template-columns: repeat(3, 1fr); } }
+        .tool-card {
+            display: block;
+            background-color: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            text-decoration: none;
+            transition: all 0.2s;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        }
+        .tool-card:hover { border-color: var(--border-strong); box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); }
+        .tool-card__title {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+        .tool-card:hover .tool-card__title { color: var(--primary); }
+        .tool-card__description {
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+            line-height: 1.6;
+        }
+        .category-pills { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+        .category-pill {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.5rem 1rem;
+            background-color: var(--surface);
+            color: var(--text-primary);
+            text-decoration: none;
+            border: 1px solid var(--border);
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            transition: all 0.2s;
+        }
+        .category-pill:hover { background-color: var(--surface-secondary); border-color: var(--border-strong); }
+        .footer {
+            background-color: var(--surface);
+            border-top: 1px solid var(--border);
+            margin-top: 4rem;
+            padding: 3rem 0 2rem;
+        }
+        .footer__grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        @media (min-width: 768px) { .footer__grid { grid-template-columns: 2fr 1fr 1fr; gap: 3rem; } }
+        .footer__title { font-size: 1.125rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.75rem; }
+        .footer__heading { font-size: 0.875rem; font-weight: 600; color: var(--text-primary); margin-bottom: 1rem; }
+        .footer__description { color: var(--text-secondary); font-size: 0.875rem; line-height: 1.6; max-width: 24rem; }
+        .footer__list { list-style: none; }
+        .footer__item { margin-bottom: 0.5rem; }
+        .footer__link { color: var(--text-secondary); text-decoration: none; font-size: 0.875rem; }
+        .footer__link:hover { color: var(--text-primary); }
+        .footer__bottom { padding-top: 2rem; border-top: 1px solid var(--border); }
+        .footer__copyright { color: var(--text-secondary); font-size: 0.875rem; text-align: center; }
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+            html { scroll-behavior: auto; }
+        }
+    </style>
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to main content</a>
+    <header class="header" role="banner">
+        <nav class="nav container" role="navigation" aria-label="Main navigation">
+            <div class="nav__brand">
+                <a href="/" class="nav__logo">The Character Universe</a>
+            </div>
+            <ul class="nav__menu">
+                <li><a href="/tools" class="nav__link">All Tools</a></li>
+                <li><a href="/characters" class="nav__link">Character Library</a></li>
+                <li><a href="/guides" class="nav__link">Guides</a></li>
+                <li><a href="/symbol-finder" class="nav__link">Symbol Finder</a></li>
+                <li><a href="/draw-symbol" class="nav__link">Draw & Find</a></li>
+            </ul>
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">🌙</button>
+        </nav>
+    </header>
+    <main id="main" role="main">
+        <section class="hero">
+            <div class="container">
+                <div class="hero__content">
+                    <h1 class="hero__title">Every character has a story.</h1>
+                    <p class="hero__subtitle">Find, understand, inspect, compare, create, copy and reuse Unicode characters, symbols and text-based representations.</p>
+                    <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                        <a href="/draw-symbol" class="btn btn--primary">Try Draw & Find</a>
+                        <a href="/symbol-finder" class="btn btn--secondary">Browse Symbols</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section">
+            <div class="container">
+                <header class="section__header">
+                    <h2 class="section__title">Featured Tools</h2>
+                    <p class="section__subtitle">Essential utilities for working with characters and Unicode</p>
+                </header>
+                <div class="tools-grid">
+                    <a href="/draw-symbol" class="tool-card">
+                        <h3 class="tool-card__title">Draw & Find</h3>
+                        <p class="tool-card__description">Sketch a symbol and receive possible Unicode matches, text art, and semantic suggestions.</p>
+                    </a>
+                    <a href="/symbol-finder" class="tool-card">
+                        <h3 class="tool-card__title">Symbol Finder</h3>
+                        <p class="tool-card__description">Search by name, category, or character to quickly copy symbols.</p>
+                    </a>
+                    <a href="/text-art" class="tool-card">
+                        <h3 class="tool-card__title">Unicode Text Art Generator</h3>
+                        <p class="tool-card__description">Convert drawings into Braille, block elements, and ASCII-like art.</p>
+                    </a>
+                    <a href="/text-inspector" class="tool-card">
+                        <h3 class="tool-card__title">Text Inspector</h3>
+                        <p class="tool-card__description">Inspect suspicious or broken text character by character.</p>
+                    </a>
+                    <a href="/characters" class="tool-card">
+                        <h3 class="tool-card__title">Character Library</h3>
+                        <p class="tool-card__description">Browse verified Unicode characters with metadata and details.</p>
+                    </a>
+                    <a href="/unicode" class="tool-card">
+                        <h3 class="tool-card__title">Unicode Explorer</h3>
+                        <p class="tool-card__description">Search official names, code points, and explore Unicode blocks.</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <section class="section">
+            <div class="container">
+                <header class="section__header">
+                    <h2 class="section__title">Browse by Category</h2>
+                </header>
+                <div class="category-pills">
+                    <a href="/symbol-finder" class="category-pill">Hearts</a>
+                    <a href="/symbol-finder" class="category-pill">Arrows</a>
+                    <a href="/symbol-finder" class="category-pill">Stars</a>
+                    <a href="/symbol-finder" class="category-pill">Math</a>
+                    <a href="/symbol-finder" class="category-pill">Currency</a>
+                    <a href="/symbol-finder" class="category-pill">Greek Letters</a>
+                    <a href="/symbol-finder" class="category-pill">Music</a>
+                    <a href="/symbol-finder" class="category-pill">Decorative</a>
+                    <a href="/symbol-finder" class="category-pill">Emoji</a>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer__grid">
+                <div class="footer__section">
+                    <h3 class="footer__title">The Character Universe</h3>
+                    <p class="footer__description">Every character has a story. Free browser-based character discovery and text utility website.</p>
+                </div>
+                <div class="footer__section">
+                    <h4 class="footer__heading">Tools</h4>
+                    <ul class="footer__list">
+                        <li class="footer__item"><a href="/symbol-finder" class="footer__link">Symbol Finder</a></li>
+                        <li class="footer__item"><a href="/draw-symbol" class="footer__link">Draw & Find</a></li>
+                        <li class="footer__item"><a href="/text-art" class="footer__link">Text Art Generator</a></li>
+                        <li class="footer__item"><a href="/characters" class="footer__link">Character Library</a></li>
+                    </ul>
+                </div>
+                <div class="footer__section">
+                    <h4 class="footer__heading">Company</h4>
+                    <ul class="footer__list">
+                        <li class="footer__item"><a href="/about" class="footer__link">About</a></li>
+                        <li class="footer__item"><a href="/guides" class="footer__link">Guides</a></li>
+                        <li class="footer__item"><a href="/contact" class="footer__link">Contact</a></li>
+                        <li class="footer__item"><a href="/privacy" class="footer__link">Privacy</a></li>
+                        <li class="footer__item"><a href="/terms" class="footer__link">Terms</a></li>
+                        <li class="footer__item"><a href="/disclaimer" class="footer__link">Disclaimer</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p class="footer__copyright">© 2024 The Character Universe. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const themeToggle = document.getElementById("themeToggle");
+            function getTheme() {
+                const saved = localStorage.getItem("theme");
+                if (saved) return saved;
+                return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+            }
+            function setTheme(theme) {
+                document.documentElement.setAttribute("data-theme", theme);
+                localStorage.setItem("theme", theme);
+                if (themeToggle) themeToggle.textContent = theme === "dark" ? "☀️" : "🌙";
+            }
+            setTheme(getTheme());
+            if (themeToggle) {
+                themeToggle.addEventListener("click", function() {
+                    const current = document.documentElement.getAttribute("data-theme") || getTheme();
+                    setTheme(current === "dark" ? "light" : "dark");
+                });
+            }
+        });
+    </script>
+</body>
+</html>
